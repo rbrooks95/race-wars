@@ -32,6 +32,8 @@ The user maybe able to sign up and join a certain race of there choice. they wou
 
 ### [ERD]()
 
+### [Component Flow](https://lucid.app/lucidchart/2af5f567-4668-48aa-9834-b16d0511d6af/edit?invitationId=inv_6b857c88-d916-41a5-aca2-0719e75a2f8a#)
+
 ---
 
 ## Try Game
