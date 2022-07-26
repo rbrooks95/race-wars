@@ -1,12 +1,13 @@
 const { Schema } = require("mongoose");
 
-const Races = new Schema(
+const Race = new Schema(
   {
     name: { type: String, required: true },
     location: { type: String, required: true },
-    url: { type: String, required: true },
+    trackPhoto: { type: String, required: true },
+    raceType: { type: String, required: true },
   },
   { timestamps: true }
 );
 
-module.exports = Races;
+module.exports = Race;
