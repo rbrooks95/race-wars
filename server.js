@@ -1,7 +1,6 @@
 const express = require("express");
 const PORT = process.env.PORT || 3001;
 const app = express();
-
 const cors = require("cors");
 const logger = require("morgan");
 
@@ -10,6 +9,7 @@ app.use(logger("dev"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const { Race } = require("./models");
 
 //post request
 app.post(
@@ -26,18 +26,11 @@ app.post(
 );
 
 //get request
-app.get(
-  "/info",
-  (request, response, next) => {
-    console.log("it was shown");
-    next();
-  },
-  (req, res) => {
-    res.send({
-      msg: "racers ready ",
-    });
-  }
-);
+app.get("/info", async (req, res) => {
+  let races = await Race.find({});
+  console.log(races);
+  res.json(races);
+});
 
 //put request
 app.put(
@@ -63,19 +56,6 @@ app.delete(
   (req, res) => {
     res.send({
       msg: " you will no longer be in the race",
-    });
-  }
-);
-
-app.get(
-  "/middleware",
-  (request, response, next) => {
-    console.log("it was sent");
-    next();
-  },
-  (req, res) => {
-    res.send({
-      msg: "this is middleware",
     });
   }
 );
