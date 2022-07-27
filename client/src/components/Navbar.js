@@ -1,19 +1,21 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <nav className="nav">
-      <a href="/" className="site-title">
+      <Link to="/" className="site-title">
         {" "}
         Race Wars
-      </a>
+      </Link>
       <ul>
         <li>
-          <a href="/signup">Race Sign up</a>
+          <Link to="/signUp">Race Sign up</Link>
         </li>
         <li>
-          <a href="/raceList">Racers</a>
+          <Link to="/raceList">Racers</Link>
         </li>
         <li>
-          <a href="/tracks">Tracks</a>
+          <Link to="/tracks">Tracks</Link>
         </li>
       </ul>
     </nav>

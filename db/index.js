@@ -3,7 +3,7 @@ require("dotenv").config();
 
 mongoose
   .connect(
-    `mongodb+srv://roshawnbrooks:${process.env.DB_PASSWORD}@cluster1.t0yca.mongodb.net/?retryWrites=true&w=majority`
+    `mongodb+srv://roshawnbrooks:${process.env.DB_PASSWORD}@cluster1.t0yca.mongodb.net/test`
   )
   .then(() => {
     console.log("Successfully connected to MongoDB.");
