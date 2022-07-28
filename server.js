@@ -38,32 +38,20 @@ app.post("/newracer", async (req, res) => {
 });
 
 //put request
-app.put(
-  "/change",
-  (request, response, next) => {
-    console.log("it was changed");
-    next();
-  },
-  (req, res) => {
-    res.send({
-      msg: "info changed",
-    });
-  }
-);
+app.put("/change/:id", async (req, res) => {
+  let race = await Race.findByIdAndUpdate({ _id: req.params.id });
+  let racerChanged = await Race.updateOne({
+    msg: "info changed",
+  });
+  res.json(race);
+});
 
 //delete request
-app.delete(
-  "/delete",
-  (request, response, next) => {
-    console.log("it was deleted");
-    next();
-  },
-  (req, res) => {
-    res.send({
-      msg: " you will no longer be in the race",
-    });
-  }
-);
+app.delete("/delete/:id", async (req, res) => {
+  let deleted = await Race.deleteOne(req.params.id);
+  console.log(deleted);
+  res.json(deleted);
+});
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);

@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/* styles for the nav bar */
 body {
   margin: 0;
 }
@@ -42,3 +43,4 @@ body {
 .nav li:hover {
   background-color: #777;
 }
+/* ///////////////////////////////////// */
