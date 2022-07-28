@@ -26,8 +26,13 @@ app.get("/races/:id", async (req, res) => {
   res.json(race);
 });
 //post request
-app.post("/races", async (req, res) => {
-  let raceSend = await Race.insertOne(req.body);
+app.post("/newracer", async (req, res) => {
+  let raceSend = await Race.create({
+    name: "Roshawn",
+    location: "Track 3",
+    trackPhoto: "333",
+    raceType: "Drift",
+  });
   console.log(raceSend);
   res.json(raceSend);
 });
