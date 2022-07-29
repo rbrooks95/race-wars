@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Card, Icon, Image } from "semantic-ui-react";
 
 export default function ViewRacers() {
   const [info, setinfo] = useState([]);
@@ -16,14 +17,18 @@ export default function ViewRacers() {
   return (
     <div>
       <h1>VIEW THE CURRENT RACES</h1>
-      {info.map((res) => (
-        <div className="">
-          <h1>{res.name}</h1>
-          <h2>{res.location}</h2>
-          <img src={res.trackPhoto} />
-          <h2>{res.raceType}</h2>
-        </div>
-      ))}
+      <Card.Group>
+        {info.map((res) => (
+          <Card textAlign="center">
+            <Image src={res.trackPhoto} wrapped ui={false} />
+            <Card.Content>
+              <Card.Header>{res.name}</Card.Header>
+              <Card.Header>{res.model}</Card.Header>
+              <Card.Header>{res.raceType}</Card.Header>
+            </Card.Content>
+          </Card>
+        ))}
+      </Card.Group>
     </div>
   );
 }
