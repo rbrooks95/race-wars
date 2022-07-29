@@ -17,8 +17,9 @@ export default function ViewRacers() {
     return res._id;
   });
   console.log(id);
-  const remove = async () => {
-    await axios.delete(`http://localhost:3001/delete/:${id}`);
+  const remove = async (e) => {
+    await axios.delete(`http://localhost:3001/delete/:${e._id}`);
+    setinfo(info);
   };
 
   return (
@@ -32,7 +33,7 @@ export default function ViewRacers() {
               <Card.Header>{res.name}</Card.Header>
               <Card.Header>{res.model}</Card.Header>
               <Card.Header>{res.raceType}</Card.Header>
-              <Button onClick={remove}>Delete</Button>
+              <Button onClick={() => remove(res._id)}>Delete</Button>
             </Card.Content>
           </Card>
         ))}

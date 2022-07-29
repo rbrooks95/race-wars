@@ -86,9 +86,7 @@ export default function RaceForm(props) {
               <option value="circuit">Circuit</option>
               <option value="time attack">Time Attack</option>
               <option value="sprint">Sprint</option>
-              <option value="https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https%3A%2F%2Fbeyondtheflag.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2018%2F04%2F690124314-f1-grand-prix-of-monaco.jpg.jpg">
-                CIRCUIT DE MONACO
-              </option>
+              <option value="Drag">Drag</option>
             </select>
           </Form.Field>
 
