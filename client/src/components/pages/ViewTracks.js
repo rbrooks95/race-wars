@@ -7,10 +7,6 @@ export default function ViewTracks() {
     <div>
       <h1>VIEW THE TRACKS</h1>
 
-      <Card
-        image="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-        header="Coral Springs"
-      />
       <Modal
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
@@ -32,18 +28,6 @@ export default function ViewTracks() {
             onClick={() => setOpen(false)}
           />
         </Modal.Content>
-        <Modal.Actions>
-          {/* <Button color="black" onClick={() => setOpen(false)}>
-            Nope
-          </Button>
-          <Button
-            content="Yep, that's me"
-            labelPosition="right"
-            icon="checkmark"
-            onClick={() => setOpen(false)}
-            positive
-          /> */}
-        </Modal.Actions>
       </Modal>
     </div>
   );
