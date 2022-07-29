@@ -36,22 +36,22 @@ const trackOptions = [
 
 const raceType = [
   {
-    key: "CS",
+    key: "D",
     value: "Drift",
     text: "Drift",
   },
   {
-    key: "CS",
+    key: "C",
     value: "Circuit",
     text: "Circuit",
   },
   {
-    key: "CS",
+    key: "T",
     value: "Time Attack",
     text: "Time Attack",
   },
   {
-    key: "CS",
+    key: "S",
     value: "Sprint",
     text: "Sprint",
   },
@@ -66,8 +66,13 @@ export default function RaceForm(props) {
   };
   const [formState, setFormState] = useState(initialState);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.id]: e.target.value });
+  };
 
+  const handleChangeDrop = (e, { r }) => {
+    setFormState({ raceType });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formState);
@@ -80,16 +85,17 @@ export default function RaceForm(props) {
         <Form onSubmit={handleSubmit} className="form">
           <Form.Field className="form-border">
             <label htmlFor="name"> Name</label>
-            <input placeholder="First Name" onch />
+            <input id="name" placeholder="First Name" onChange={handleChange} />
           </Form.Field>
           <Form.Field>
             <label htmlFor="car">Car</label>
-            <input placeholder="Car" />
+            <input id="car" placeholder="Car" onChange={handleChange} />
           </Form.Field>
           <Form.Field>
             <label htmlFor="model">Model</label>
-            <input placeholder="Model" />
+            <input id="model" placeholder="Model" onChange={handleChange} />
           </Form.Field>
+
           <Form.Field>
             <label htmlFor="trackPhoto">Track</label>
             <Dropdown
@@ -98,6 +104,9 @@ export default function RaceForm(props) {
               search
               selection
               options={trackOptions}
+              onChange={handleChangeDrop}
+              id="trackPhoto"
+              value={initialState.trackPhoto}
             />
           </Form.Field>
           <Form.Field>
@@ -109,6 +118,8 @@ export default function RaceForm(props) {
               selection
               placeholder="Race Type"
               options={raceType}
+              onChange={handleChange}
+              id="raceType"
             />
           </Form.Field>
           <Button type="submit">Submit</Button>
