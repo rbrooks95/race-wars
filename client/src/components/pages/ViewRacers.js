@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Button } from "semantic-ui-react";
 
 export default function ViewRacers() {
   const [info, setinfo] = useState([]);
-
   useEffect(() => {
     const racers = async () => {
       const res = await axios.get("http://localhost:3001/races");
@@ -13,6 +12,14 @@ export default function ViewRacers() {
     };
     racers();
   }, []);
+
+  const id = info.map((res) => {
+    return res._id;
+  });
+  console.log(id);
+  const remove = async () => {
+    await axios.delete(`http://localhost:3001/delete/:${id}`);
+  };
 
   return (
     <div>
@@ -25,6 +32,7 @@ export default function ViewRacers() {
               <Card.Header>{res.name}</Card.Header>
               <Card.Header>{res.model}</Card.Header>
               <Card.Header>{res.raceType}</Card.Header>
+              <Button onClick={remove}>Delete</Button>
             </Card.Content>
           </Card>
         ))}

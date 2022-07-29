@@ -29,88 +29,23 @@ export default function ViewTracks() {
             />
           </Modal.Content>
         </Modal>
+
         <Modal
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
           trigger={
             <Card
-              image="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-              header="Coral Springs"
+              image="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
+              header="MONZA"
             />
           }
         >
-          <Modal.Header textAlign="center">Coral Springs</Modal.Header>
+          <Modal.Header textAlign="center">MONZA</Modal.Header>
           <Modal.Content image>
             <Image
               size="large"
-              src="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-              fluid
-              wrapped
-              onClick={() => setOpen(false)}
-            />
-          </Modal.Content>
-        </Modal>
-        <Modal
-          onClose={() => setOpen(false)}
-          onOpen={() => setOpen(true)}
-          open={open}
-          trigger={
-            <Card
-              image="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-              header="Coral Springs"
-            />
-          }
-        >
-          <Modal.Header textAlign="center">Coral Springs</Modal.Header>
-          <Modal.Content image>
-            <Image
-              size="large"
-              src="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-              fluid
-              wrapped
-              onClick={() => setOpen(false)}
-            />
-          </Modal.Content>
-        </Modal>
-        <Modal
-          onClose={() => setOpen(false)}
-          onOpen={() => setOpen(true)}
-          open={open}
-          trigger={
-            <Card
-              image="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-              header="Coral Springs"
-            />
-          }
-        >
-          <Modal.Header textAlign="center">Coral Springs</Modal.Header>
-          <Modal.Content image>
-            <Image
-              size="large"
-              src="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-              fluid
-              wrapped
-              onClick={() => setOpen(false)}
-            />
-          </Modal.Content>
-        </Modal>
-        <Modal
-          onClose={() => setOpen(false)}
-          onOpen={() => setOpen(true)}
-          open={open}
-          trigger={
-            <Card
-              image="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
-              header="Coral Springs"
-            />
-          }
-        >
-          <Modal.Header textAlign="center">Coral Springs</Modal.Header>
-          <Modal.Content image>
-            <Image
-              size="large"
-              src="https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg"
+              src="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
               fluid
               wrapped
               onClick={() => setOpen(false)}
@@ -121,3 +56,6 @@ export default function ViewTracks() {
     </div>
   );
 }
+
+// MONZA
+// https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg
