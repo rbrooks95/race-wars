@@ -21,7 +21,7 @@ export default function RaceForm(props) {
     e.preventDefault();
     let res = await axios.post("http://localhost:3001/newracer", formState);
     console.log(res);
-    setFormState(formState);
+    window.location.reload(false);
   };
   return (
     <div>

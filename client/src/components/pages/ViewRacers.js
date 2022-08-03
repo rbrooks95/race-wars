@@ -1,6 +1,6 @@
+import { Card, Icon, Image, Button } from "semantic-ui-react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Card, Icon, Image, Button } from "semantic-ui-react";
 
 export default function ViewRacers() {
   const [info, setinfo] = useState([]);
@@ -20,6 +20,7 @@ export default function ViewRacers() {
   const remove = async (e) => {
     await axios.delete(`http://localhost:3001/delete/:${e._id}`);
     setinfo(info);
+    window.location.reload(false);
   };
 
   return (
