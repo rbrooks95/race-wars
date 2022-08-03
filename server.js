@@ -27,12 +27,7 @@ app.get("/races/:id", async (req, res) => {
 });
 //post request
 app.post("/newracer", async (req, res) => {
-  let raceSend = await Race.create({
-    name: "Roshawn",
-    location: "Track 3",
-    trackPhoto: "333",
-    raceType: "Drift",
-  });
+  let raceSend = await Race.create(req.body);
   console.log(raceSend);
   res.json(raceSend);
 });
@@ -48,7 +43,7 @@ app.put("/change/:id", async (req, res) => {
 
 //delete request
 app.delete("/delete/:id", async (req, res) => {
-  let deleted = await Race.deleteOne(req.params.id);
+  let deleted = await Race.deleteOne(req.body);
   console.log(deleted);
   res.json(deleted);
 });

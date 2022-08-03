@@ -8,7 +8,7 @@ const main = async () => {
       name: "Coral Springs",
       location: "Track 1",
       trackPhoto:
-        "https://maxvelocity.events/the-10-most-famous-f1-racing-tracks/",
+        "https://maxvelocity.events/wp-content/uploads/2019/04/Estoril-Portugal.jpg",
       raceType: "Drag",
     },
     {
