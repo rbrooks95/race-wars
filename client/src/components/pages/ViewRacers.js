@@ -19,11 +19,11 @@ export default function ViewRacers() {
   console.log(id);
 
   const remove = async (e) => {
-    await axios.delete(`http://localhost:3001/delete/:${e._id}`);
+    await axios.delete(`http://localhost:3001/delete/${e}`);
     setinfo(info);
     window.location.reload(false);
   };
-
+  console.log(info);
   return (
     <div>
       <h1>VIEW THE CURRENT RACES</h1>
