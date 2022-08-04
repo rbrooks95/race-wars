@@ -17,6 +17,7 @@ export default function ViewRacers() {
     return res._id;
   });
   console.log(id);
+
   const remove = async (e) => {
     await axios.delete(`http://localhost:3001/delete/:${e._id}`);
     setinfo(info);
