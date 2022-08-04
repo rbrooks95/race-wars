@@ -32,6 +32,7 @@ export default function ViewRacers() {
             <Image src={res.trackPhoto} wrapped ui={false} />
             <Card.Content>
               <Card.Header>{res.name}</Card.Header>
+              <Card.Header>{res.car}</Card.Header>
               <Card.Header>{res.model}</Card.Header>
               <Card.Header>{res.raceType}</Card.Header>
               <Button onClick={() => remove(res._id)}>Delete</Button>
