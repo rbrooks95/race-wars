@@ -4,9 +4,9 @@ import { useState } from "react";
 export default function ViewTracks() {
   const [open, setOpen] = useState(false);
   const [mopen, msetOpen] = useState(false);
-  // const [open, setOpen] = useState(false);
-  // const [open, setOpen] = useState(false);
-  // const [open, setOpen] = useState(false);
+  const [lopen, lsetOpen] = useState(false);
+  const [popen, psetOpen] = useState(false);
+  const [copen, csetOpen] = useState(false);
 
   return (
     <div>
@@ -34,7 +34,7 @@ export default function ViewTracks() {
             />
           </Modal.Content>
         </Modal>
-
+        {/* ///////////////////////////////////// */}
         <Modal
           onClose={() => msetOpen(false)}
           onOpen={() => msetOpen(true)}
@@ -57,72 +57,72 @@ export default function ViewTracks() {
             />
           </Modal.Content>
         </Modal>
-
+        {/* ////////////////////////////////////////////////////// */}
         <Modal
-          onClose={() => msetOpen(false)}
-          onOpen={() => msetOpen(true)}
-          open={mopen}
+          onClose={() => lsetOpen(false)}
+          onOpen={() => lsetOpen(true)}
+          open={lopen}
           trigger={
             <Card
-              image="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
-              header="MONZA"
+              image="https://www.co.monterey.ca.us/home/showpublishedimage/25376/637123523806970000"
+              header="LAGUNA SECA"
             />
           }
         >
-          <Modal.Header textAlign="center">MONZA</Modal.Header>
+          <Modal.Header textAlign="center">LAGUNA SECA</Modal.Header>
           <Modal.Content image>
             <Image
               size="large"
               src="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
               fluid
               wrapped
-              onClick={() => msetOpen(false)}
+              onClick={() => lsetOpen(false)}
             />
           </Modal.Content>
         </Modal>
-
+        {/* ////////////////////////////////////////////////////////////// */}
         <Modal
-          onClose={() => msetOpen(false)}
-          onOpen={() => msetOpen(true)}
-          open={mopen}
+          onClose={() => psetOpen(false)}
+          onOpen={() => psetOpen(true)}
+          open={popen}
           trigger={
             <Card
-              image="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
-              header="MONZA"
+              image="https://www.thedrive.com/content/2020/02/DSC01209.jpg?quality=85"
+              header="MOUNT PANORAMA"
             />
           }
         >
-          <Modal.Header textAlign="center">MONZA</Modal.Header>
+          <Modal.Header textAlign="center">MOUNT PANORAMA</Modal.Header>
           <Modal.Content image>
             <Image
               size="large"
-              src="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
+              src="https://www.thedrive.com/content/2020/02/DSC01209.jpg?quality=85"
               fluid
               wrapped
-              onClick={() => msetOpen(false)}
+              onClick={() => psetOpen(false)}
             />
           </Modal.Content>
         </Modal>
-
+        {/* //////////////////////////////////////////////////////// */}
         <Modal
-          onClose={() => msetOpen(false)}
-          onOpen={() => msetOpen(true)}
-          open={mopen}
+          onClose={() => csetOpen(false)}
+          onOpen={() => csetOpen(true)}
+          open={copen}
           trigger={
             <Card
-              image="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
-              header="MONZA"
+              image="https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https%3A%2F%2Fbeyondtheflag.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2018%2F04%2F690124314-f1-grand-prix-of-monaco.jpg.jpg"
+              header="CIRCUIT DE MONACO"
             />
           }
         >
-          <Modal.Header textAlign="center">MONZA</Modal.Header>
+          <Modal.Header textAlign="center">CIRCUIT DE MONACO</Modal.Header>
           <Modal.Content image>
             <Image
               size="large"
-              src="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
+              src="https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https%3A%2F%2Fbeyondtheflag.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2018%2F04%2F690124314-f1-grand-prix-of-monaco.jpg.jpg"
               fluid
               wrapped
-              onClick={() => msetOpen(false)}
+              onClick={() => csetOpen(false)}
             />
           </Modal.Content>
         </Modal>
