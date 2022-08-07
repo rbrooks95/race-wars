@@ -4,7 +4,12 @@ import { useState, useEffect } from "react";
 
 export default function ViewRacers() {
   const [info, setinfo] = useState([]);
-  const [formState, setFormState] = useState("");
+
+  const initialState = {
+    trackPhoto: "",
+    raceType: "",
+  };
+  const [formState, setFormState] = useState(initialState);
   useEffect(() => {
     const racers = async () => {
       const res = await axios.get("http://localhost:3001/races");
@@ -16,6 +21,11 @@ export default function ViewRacers() {
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value });
+  };
+  const updated = async (e) => {
+    await axios.put(`http://localhost:3001/change/${e}`);
+    setFormState(formState);
+    window.location.reload(false);
   };
 
   const remove = async (e) => {
@@ -37,6 +47,7 @@ export default function ViewRacers() {
               <Card.Header>{res.model}</Card.Header>
               <Card.Header>{res.raceType}</Card.Header>
               <Button onClick={() => remove(res._id)}>Delete</Button>
+
               <Popup
                 content={
                   <Form>
@@ -78,6 +89,9 @@ export default function ViewRacers() {
                         <option value="Drag">Drag</option>
                       </select>
                     </Form.Field>
+                    <Button onClick={() => updated(res._id)} type="submit">
+                      Submit
+                    </Button>
                   </Form>
                 }
                 on="click"
