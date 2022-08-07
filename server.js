@@ -34,18 +34,18 @@ app.post("/newracer", async (req, res) => {
 
 //put request
 app.put("/change/:id", async (req, res) => {
-  let race = await Race.findByIdAndUpdate({ _id: req.params.id });
-  let racerChanged = await Race.updateOne({
-    msg: "info changed",
+  let race = await Race.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
   });
+
   res.json(race);
 });
 
 //delete request
 app.delete("/delete/:id", async (req, res) => {
-  let deleted = await Race.deleteOne(req.body);
+  let deleted = await Race.findByIdAndDelete(req.params.id);
   console.log(deleted);
-  res.json(deleted);
+  res.send(deleted);
 });
 
 app.listen(PORT, () => {
