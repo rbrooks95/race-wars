@@ -30,8 +30,9 @@ export default function ViewRacers() {
     setFormState({ ...formState, [e.target.id]: e.target.value });
   };
   const updated = async (e, r) => {
-    e.preventDefault();
+    // e.preventDefault();
     let res = await axios.put(`http://localhost:3001/change/${r}`, formState);
+    console.log(r);
     console.log(res);
     window.location.reload(false);
   };
