@@ -11,15 +11,27 @@ export default function RaceForm(props) {
     trackPhoto: "",
     raceType: "",
   };
+  const tracks = { laps: "" };
   const [formState, setFormState] = useState(initialState);
+  const [trackState, setTrackState] = useState(tracks);
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value });
   };
 
+  const trackChange = (e) => {
+    setTrackState({ ...trackState, [e.target.id]: e.target.value });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await axios.post("http://localhost:3001/newracer", formState);
+    console.log(res);
+    //window.location.reload(false);
+  };
+  const trackSubmit = async (e) => {
+    e.preventDefault();
+    let res = await axios.post("http://localhost:3001/trackinfo", trackState);
     console.log(res);
     window.location.reload(false);
   };
@@ -27,7 +39,7 @@ export default function RaceForm(props) {
     <div>
       <h1>LET'S RACE!!!!</h1>
       <Container className="form-border" textAlign="center">
-        <Form onSubmit={handleSubmit} className="form">
+        <Form onSubmit={handleSubmit} onSubmit={trackSubmit} className="form">
           <Form.Field className="form-border">
             <label htmlFor="name"> Name</label>
             <input
@@ -87,6 +99,15 @@ export default function RaceForm(props) {
               <option value="time attack">Time Attack</option>
               <option value="sprint">Sprint</option>
               <option value="Drag">Drag</option>
+            </select>
+          </Form.Field>
+
+          <Form.Field>
+            <label htmlFor="laps">Laps</label>
+            <select id="laps" onChange={trackChange} value={trackState.laps}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
             </select>
           </Form.Field>
 

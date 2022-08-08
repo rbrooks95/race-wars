@@ -4,27 +4,35 @@ import { useState, useEffect } from "react";
 
 export default function ViewRacers() {
   const [info, setinfo] = useState([]);
+  const [trackLaps, setTrackLaps] = useState([]);
 
-  const initialState = {
-    trackPhoto: "",
-    raceType: "",
-  };
-  const [formState, setFormState] = useState(initialState);
+  const [formState, setFormState] = useState([]);
   useEffect(() => {
     const racers = async () => {
       const res = await axios.get("http://localhost:3001/races");
       console.log(res.data);
       setinfo(res.data);
+      setFormState(res.data);
     };
     racers();
+  }, []);
+
+  useEffect(() => {
+    const trackLap = async () => {
+      const res = await axios.get("http://localhost:3001/trackinfo");
+      console.log(res.data);
+      setTrackLaps(res.data);
+    };
+    trackLap();
   }, []);
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value });
   };
-  const updated = async (e) => {
-    await axios.put(`http://localhost:3001/change/${e}`);
-    setFormState(formState);
+  const updated = async (e, r) => {
+    e.preventDefault();
+    let res = await axios.put(`http://localhost:3001/change/${r}`, formState);
+    console.log(res);
     window.location.reload(false);
   };
 
@@ -33,7 +41,9 @@ export default function ViewRacers() {
     setinfo(info);
     window.location.reload(false);
   };
-  console.log(info);
+
+  console.log(formState);
+
   return (
     <div>
       <h1>VIEW THE CURRENT RACES</h1>
@@ -46,11 +56,14 @@ export default function ViewRacers() {
               <Card.Header>{res.car}</Card.Header>
               <Card.Header>{res.model}</Card.Header>
               <Card.Header>{res.raceType}</Card.Header>
+              {trackLaps.map((res) => (
+                <Card.Header>{res.laps}</Card.Header>
+              ))}
               <Button onClick={() => remove(res._id)}>Delete</Button>
 
               <Popup
                 content={
-                  <Form>
+                  <Form onSubmit={() => updated(res._id)}>
                     <Form.Field>
                       <label htmlFor="trackPhoto"> Tracks</label>
                       <select
@@ -89,14 +102,14 @@ export default function ViewRacers() {
                         <option value="Drag">Drag</option>
                       </select>
                     </Form.Field>
-                    <Button onClick={() => updated(res._id)} type="submit">
-                      Submit
-                    </Button>
+                    <Button type="submit">Submit</Button>
                   </Form>
                 }
                 on="click"
                 popper={{ id: "popper-container", style: { zIndex: 2000 } }}
-                trigger={<Button>Open a popup</Button>}
+                trigger={
+                  <Button onClick={() => updated(res._id)}>Open a popup</Button>
+                }
               />
             </Card.Content>
           </Card>

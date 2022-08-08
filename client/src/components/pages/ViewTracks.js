@@ -73,7 +73,7 @@ export default function ViewTracks() {
           <Modal.Content image>
             <Image
               size="large"
-              src="https://phantom-marca.unidadeditorial.es/129f786ee94996750e0756971c33a704/resize/1320/f/jpg/assets/multimedia/imagenes/2021/09/09/16312120805110.jpg"
+              src="https://www.co.monterey.ca.us/home/showpublishedimage/25376/637123523806970000"
               fluid
               wrapped
               onClick={() => lsetOpen(false)}
