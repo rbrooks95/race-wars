@@ -2,9 +2,9 @@ const { Schema } = require("mongoose");
 
 const Tracks = new Schema(
   {
-    trackName: { type: String, required: true },
+    laps: { type: String, required: true },
 
-    publisher_id: { type: Schema.Types.ObjectId, ref: "track_id" },
+    //track_id: { type: Schema.Types.ObjectId, ref: "race_id" },
   },
   { timestamps: true }
 );

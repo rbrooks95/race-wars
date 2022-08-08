@@ -22,6 +22,10 @@ The user maybe able to sign up and join a certain race of there choice. they wou
 
 ---
 
+### How to get started
+
+Fork and clone the repository. In the client folder and main folder run npm i to download all needed dependencies
+
 ### [TrelloBoard](https://trello.com/b/njMskdlx/racing-meet)
 
 ---

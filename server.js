@@ -10,7 +10,7 @@ app.use(logger("dev"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const { Race } = require("./models");
+const { Race, Tracks } = require("./models");
 
 //get request
 app.get("/races", async (req, res) => {
@@ -48,6 +48,14 @@ app.delete("/delete/:id", async (req, res) => {
   res.send(deleted);
 });
 
+app.post("/trackinfo", async (req, res) => {
+  let trackName = await Tracks.create(req.body);
+  res.json(trackName);
+});
+app.get("/trackinfo", async (req, res) => {
+  let trackName = await Tracks.find({});
+  res.json(trackName);
+});
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
 });
